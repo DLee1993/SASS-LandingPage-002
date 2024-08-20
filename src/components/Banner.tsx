@@ -1,3 +1,8 @@
 export const Banner = () => {
-  return <><h1>Banner</h1></>;
+    return (
+        <div className="flex justify-center items-center gap-1.5 text-center text-black py-3 font-medium bg-[linear-gradient(to_right,#FCD6FF,#29D8FF,#FFFD80,#F89ABF,#FCD6FF)] opacity-70">
+            <p className="hidden md:block">Introducing a completely redesigned interface —</p>
+            <p className="underline">Explore the demo</p>
+        </div>
+    );
 };
