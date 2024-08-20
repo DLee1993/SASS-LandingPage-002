@@ -13,6 +13,6 @@
         @apply h-8 w-auto;
     }
     .desktopNavList li a {
-        @apply opacity-60
+        @apply opacity-60 hover:opacity-100 transition-all;
     }
 }
