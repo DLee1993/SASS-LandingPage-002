@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={clsx(dmSans.className, "antialiased")}>
+            <body className={clsx(dmSans.className, "antialiased bg-black text-white")}>
                 <SmoothScrolling>{children}</SmoothScrolling>
             </body>
         </html>
