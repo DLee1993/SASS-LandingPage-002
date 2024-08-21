@@ -3,7 +3,7 @@ import appScreen from "../assets/images/app-screen.png";
 
 export const ProductShowcase = () => {
     return (
-        <section className="py-24 bg-[linear-gradient(to_bottom,#000,#200d42_34%,#4f21a1_65%,#a46ed8_82%)]">
+        <section className="py-24 bg-[linear-gradient(to_bottom,#000,#200d42_34%,#4f21a1)]">
             <div className="container">
                 <h2 className="text-5xl md:text-6xl text-center font-bold tracking-tighter">
                     Intuitive interface
