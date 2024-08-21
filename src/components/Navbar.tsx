@@ -51,7 +51,7 @@ export const Navbar = () => {
                 </div>
             </nav>
             <nav
-                className={`fixed top-0 left-0 w-full h-screen bg-black/25 transition-all duration-500 ${
+                className={`fixed top-0 left-0 w-full h-screen bg-black/80 transition-all duration-500 ${
                     open ? "translate-x-0" : "translate-x-full"
                 }`}
                 id="mobile-nav"
