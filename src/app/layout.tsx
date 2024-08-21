@@ -17,8 +17,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={clsx(dmSans.className, "antialiased bg-black text-white overflow-x-hidden")}>
+        <html lang="en" className="overflow-x-hidden">
+            <body className={clsx(dmSans.className, "antialiased bg-black text-white overflow-clip")}>
                 <SmoothScrolling>{children}</SmoothScrolling>
             </body>
         </html>
