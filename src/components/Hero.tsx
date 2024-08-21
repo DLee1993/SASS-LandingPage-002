@@ -46,7 +46,7 @@ export const Hero = () => {
                     <button className="ctaBaseStyling cta-primary">Get for free</button>
                 </article>
             </div>
-            <div className="absolute top-[calc(100%-96px)] sm:top-[calc(100%-120px)] h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px] left-1/2 -translate-x-1/2 rounded-[100%] bg-black border-[#b48cde] bg-[radial-gradient(closest-side,#000_82%,#9560eb)]"></div>
+            <div className="absolute top-[calc(100%-96px)] sm:top-[calc(100%-120px)] h-[375px] w-[750px] sm:w-[2500px] sm:h-[768px] left-1/2 -translate-x-1/2 rounded-[100%] bg-black border-[#b48cde] bg-[radial-gradient(closest-side,#000_82%,#9560eb)]"></div>
         </section>
     );
 };
