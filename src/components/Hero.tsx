@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import Arrow from "@/assets/icons/arrow-w.svg";
 import message from "@/assets/images/message.png";
@@ -24,20 +27,34 @@ export const Hero = () => {
                         <h1 className="text-7xl md:text-9xl font-bold tracking-tighter w-[320px] md:w-[550px] text-center">
                             One Task at a Time.
                         </h1>
-                        <Image
-                            src={cursor}
-                            alt="cursor icon"
-                            width={200}
-                            height={200}
-                            className="h-auto hidden md:block absolute right-[507px] lg:right-[512px] top-[108px]"
-                        />
-                        <Image
-                            src={message}
-                            alt="message icon"
-                            width={200}
-                            height={200}
-                            className="h-auto hidden md:block absolute left-[503px] lg:left-[513px] top-[56px]"
-                        />
+                        <motion.div
+                            className="hidden md:block absolute right-[507px] lg:right-[512px] top-[108px]"
+                            drag
+                            dragSnapToOrigin
+                        >
+                            <Image
+                                src={cursor}
+                                alt="cursor icon"
+                                width={200}
+                                height={200}
+                                className="h-auto max-w-none hover:cursor-grab active:cursor-grabbing"
+                                draggable={false}
+                            />
+                        </motion.div>
+                        <motion.div
+                            className="hidden md:block absolute left-[503px] lg:left-[513px] top-[56px]"
+                            drag
+                            dragSnapToOrigin
+                        >
+                            <Image
+                                src={message}
+                                alt="message icon"
+                                width={200}
+                                height={200}
+                                className="h-auto max-w-none hover:cursor-grab active:cursor-grabbing"
+                                draggable={false}
+                            />
+                        </motion.div>
                     </div>
                     <p className="text-xl max-w-[448px] text-center">
                         Celebrate the joy of accomplishment with an app designed to track your
