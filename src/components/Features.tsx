@@ -1,4 +1,4 @@
-import FeatureIcon from "@/assets/icons/ecosystem.svg";
+import { IndividualFeature } from "./IndividualFeature";
 
 const features = [
     {
@@ -31,20 +31,11 @@ export const Features = () => {
                 </p>
                 <ul className="columns-1 md:columns-3 w-10/12 mx-auto mt-16 space-y-4">
                     {features.map((feature, index) => (
-                        <li
+                        <IndividualFeature
                             key={index}
-                            className="px-5 py-10 max-w-[330px] h-[312px] lg:h-auto mx-auto flex flex-col justify-center items-center gap-y-5 border-white/30 border-[1px] rounded-xl"
-                        >
-                            <figure>
-                                <FeatureIcon />
-                            </figure>
-                            <article>
-                                <h3 className="font-bold text-center">{feature.title}</h3>
-                                <p className="text-white/50 text-center pt-2">
-                                    {feature.description}
-                                </p>
-                            </article>
-                        </li>
+                            title={feature.title}
+                            description={feature.description}
+                        />
                     ))}
                 </ul>
             </div>
