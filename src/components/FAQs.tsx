@@ -1,4 +1,11 @@
+"use client";
+
 import Plus from "@/assets/icons/plus.svg";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import MinusIcon from "@/assets/icons/minus.svg";
+import PlusIcon from "@/assets/icons/plus.svg";
+import clsx from "clsx";
 
 const items = [
     {
@@ -19,6 +26,42 @@ const items = [
     },
 ];
 
+const Item = ({ question, answer }: { question: string; answer: string }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className="py-7 border-b border-white/30" onClick={() => setIsOpen(!isOpen)}>
+            <div className="flex items-center">
+                <span className="flex-1 text-md font-bold cursor-pointer">{question}</span>
+                {isOpen ? <MinusIcon /> : <PlusIcon />}
+            </div>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{
+                            opacity: 0,
+                            height: 0,
+                            marginTop: 0,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            height: "auto",
+                            marginTop: "16px",
+                        }}
+                        exit={{
+                            opacity: 0,
+                            height: 0,
+                            marginTop: 0,
+                        }}
+                    >
+                        {answer}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
+
 export const FAQs = () => {
     return (
         <section className="py-24  bg-[linear-gradient(to_top,#000,#200d42_34%,#4f21a1_65%)]">
@@ -30,19 +73,7 @@ export const FAQs = () => {
                 </div>
                 <div className="grid divide-y divide-neutral-200 max-w-2xl mx-auto mt-12">
                     {items.map((item, index) => (
-                        <div key={index} className="py-5">
-                            <details className="group">
-                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                                    <span>{item.question}</span>
-                                    <span className="transition group-open:rotate-180">
-                                        <Plus />
-                                    </span>
-                                </summary>
-                                <p className="mt-3 group-open:animate-fadeIn">
-                                    {item.answer}
-                                </p>
-                            </details>
-                        </div>
+                        <Item key={index} question={item.question} answer={item.answer} />
                     ))}
                 </div>
             </div>
