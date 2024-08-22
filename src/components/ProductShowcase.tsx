@@ -1,7 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import appScreen from "../assets/images/app-screen.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export const ProductShowcase = () => {
+    const imageRef = useRef<HTMLImageElement>(null);
+
+    const { scrollYProgress } = useScroll({
+        target: imageRef,
+        offset: ["start end", "end end"],
+    });
+
+    const rotateX = useTransform(scrollYProgress, [0, 1], [15, 0]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
     return (
         <section className="py-24 bg-[linear-gradient(to_bottom,#000,#200d42_34%,#4f21a1)]">
             <div className="container">
@@ -12,9 +26,12 @@ export const ProductShowcase = () => {
                     Celebrate the joy of accomplishment with an app designed to track your progress,
                     motivate your efforts, and celebrate your successes, one task at a time.
                 </p>
-                <figure className="grid place-content-center mt-14">
-                  <Image src={appScreen} alt="screenshot of app" />
-                </figure>
+                <motion.figure
+                    className="relative grid place-content-center mt-14"
+                    style={{ opacity: opacity, rotateX: rotateX, transformPerspective: "800px" }}
+                >
+                    <Image src={appScreen} alt="screenshot of app" ref={imageRef} />
+                </motion.figure>
             </div>
         </section>
     );
