@@ -27,7 +27,6 @@ export const FAQs = () => {
                     <h2 className="text-5xl md:text-6xl text-center font-bold tracking-tighter max-w-[672px]">
                         Frequently asked questions
                     </h2>
-                    <p className="text-neutral-500 text-xl mt-3">Frequenty asked questions</p>
                 </div>
                 <div className="grid divide-y divide-neutral-200 max-w-2xl mx-auto mt-12">
                     {items.map((item, index) => (
