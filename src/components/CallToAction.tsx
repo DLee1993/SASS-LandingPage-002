@@ -14,7 +14,7 @@ export const CallToAction = () => {
         }, 2000);
 
     return (
-        <section className="py-24">
+        <section className="py-28">
             <div className="container relative flex justify-center items-center flex-col gap-7">
                 <h2 className="text-5xl md:text-6xl text-center font-bold tracking-tighter">
                     Get instant access
@@ -53,7 +53,7 @@ export const CallToAction = () => {
                     alt="message icon"
                     width={200}
                     height={200}
-                    className="h-auto hidden md:block absolute md:-right-24 xl:right-[50px] top-[99px]"
+                    className="h-auto hidden md:block absolute md:-right-24 xl:right-[50px] top-[60px]"
                 />
             </div>
         </section>
